@@ -12,6 +12,10 @@ export default async function handler(
 
   const redisUrl = process.env.KV_REST_API_URL;
 const redisToken = process.env.KV_REST_API_TOKEN;
+  console.log({
+  hasRedisUrl: !!redisUrl,
+  hasRedisToken: !!redisToken
+});
   if (!redisUrl || !redisToken) {
     return res.status(500).json({
       success: false,
